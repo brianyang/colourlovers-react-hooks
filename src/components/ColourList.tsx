@@ -12,8 +12,8 @@ const ColourList = () => {
   const [data, updateData] = useState(undefined);
   const fetchData = () => {
     // const url = `https://cors-anywhere.herokuapp.com/` + 
-    const url = `http://api.allorigins.ml/get?url=` + 
-    `http://www.colourlovers.com/api/palettes/new?format=json`
+    const url = `//api.allorigins.ml/get?url=` + 
+    `https://www.colourlovers.com/api/palettes/new?format=json`
      fetch(url).then(res => {
         return res.json();
       }).then(json => {

@@ -10,8 +10,8 @@ interface Item {
 }
 
 const ColourList = (props: any) => {
-  const url = `https://cors-anywhere.herokuapp.com/` + 
-  `http://www.colourlovers.com/api/palette/${props.match.params.id}?format=json`
+  const url = `//cors-anywhere.herokuapp.com/` + 
+  `https://www.colourlovers.com/api/palette/${props.match.params.id}?format=json`
   var result = useFetch(url) || []
 
   const [color, setColor] = useState([]);
