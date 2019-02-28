@@ -35,7 +35,6 @@ const ColourList = () => {
     <Suspense fallback={<div>Loading...</div>}>
       <div className="row">
         {result && result.response && result.response.map((item: Item, index: number) => {
-  debugger
           return (
             <div key={index} className="col-12 col-md-6 col-lg-4 col-xl-3">
               <Colour>{item}</Colour>
