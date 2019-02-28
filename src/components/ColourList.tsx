@@ -11,14 +11,13 @@ interface Item {
 const ColourList = () => {
   const [data, updateData] = useState(undefined);
   const fetchData = () => {
-    // const url = `https://cors-anywhere.herokuapp.com/` + 
-    const url = `//api.allorigins.ml/get?url=` + 
+    const url = `https://fierce-retreat-28186.herokuapp.com/` + 
     `https://www.colourlovers.com/api/palettes/new?format=json`
      fetch(url).then(res => {
-        return res.json();
+        return res.json()
       }).then(json => {
         let data: any = {
-          response: JSON.parse(json.contents)
+          response: json
         }
         updateData(data);
      });
