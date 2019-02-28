@@ -10,6 +10,7 @@ interface Item {
 
 const ColourList = () => {
   const [data, updateData] = useState(undefined);
+  const [page, setPage] = useState(1);
   const fetchData = () => {
     const url = `https://fierce-retreat-28186.herokuapp.com/` + 
     `https://www.colourlovers.com/api/palettes/new?format=json`
@@ -41,6 +42,15 @@ const ColourList = () => {
           )
         })}
       </div>
+      <nav aria-label="Page navigation">
+        <ul className="pagination">
+          <li className="page-item"><a className="page-link">Previous</a></li>
+          <li className="page-item active"><a className="page-link">1</a></li>
+          <li className="page-item"><a className="page-link">2</a></li>
+          <li className="page-item"><a className="page-link">3</a></li>
+          <li className="page-item next"><a className="page-link" onClick={() => setPage(2)}>Next</a></li>
+        </ul>
+      </nav>
     </Suspense>
   );
 }
