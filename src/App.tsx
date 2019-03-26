@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, BrowserRouter } from 'react-router-dom';
 import moment from 'moment'
 import ColourList from './components/ColourList'
 import ColourDetail from './components/ColourDetail'
@@ -15,16 +15,17 @@ const App = () => {
   }, 60000);
 
   return (
-    <Router>
+    <BrowserRouter>
       <div className="App">
         <strong style={{color:'#fff', float:'right'}}>Last Updated at {time.format('LT')}</strong>
         <header className="App-header">
-          <h1><Link to="/"><span className='light-style'>ColourLovers.</span> Live.</Link></h1>
+          <h1><Link to="/page/1"><span className='light-style'>ColourLovers.</span> Live.</Link></h1>
         </header>
         <Route exact path="/" component={ColourList} />
-        <Route exact path="/:id" component={ColourDetail} />
+        <Route exact path="/page/:pageNum" component={ColourList} />
+        <Route exact path="/palette/:id" component={ColourDetail} />
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 
